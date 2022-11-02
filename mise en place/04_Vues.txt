@@ -1,1 +1,0 @@
--- Coller ici les script de création de vues.
