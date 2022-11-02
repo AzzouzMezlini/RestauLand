@@ -1,0 +1,14 @@
+liste_roles = (id_role UUID, int_role VARCHAR(50) );
+tiers = (id_tier UUID, nom VARCHAR(50) , tel VARCHAR(50) , mail VARCHAR(50) , adr_postl VARCHAR(50) , code_postl VARCHAR(50) , fid CHAR(1) );
+users = (id_user UUID, login VARCHAR(50) , mdp CHAR(64) , #id_tier*);
+liste_types_articles = (id_type_article UUID, int_type VARCHAR(50) );
+liste_formes_tables = (id_forme_tbl UUID, int_forme VARCHAR(50) );
+liste_etat_reservation = (id_etat_res UUID, int_etat VARCHAR(50) );
+employees = (id_employe UUID, matricule VARCHAR(50) , mdp CHAR(64) , #id_tier*, #id_role);
+articles = (id_article UUID, int_article VARCHAR(50) , ingrd TEXT, prix NUMERIC(8,3)  , #id_type_article);
+tables = (id_table UUID, num_tbl INTEGER, nb_couvert INTEGER, larg_tbl INTEGER, long_tbl INTEGER, position_tbl VARCHAR(50) , #id_forme_tbl);
+dressages = (id_dres UUID, int_dressage VARCHAR(50) , path_photo_dres TEXT, #id_article);
+reservations = (id_res UUID, num_res INTEGER, avis TEXT, date_reg TIMESTAMP, date_res TIMESTAMP, #id_table, #id_tier);
+commande = (#id_res, id_cmd UUID, num_cmd INTEGER);
+demande_client = (#(#id_res, id_cmd), #id_article);
+etat_res = (#id_res, date_debut TIMESTAMP, #id_employe, #id_etat_res);

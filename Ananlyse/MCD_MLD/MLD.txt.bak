@@ -1,0 +1,14 @@
+liste_roles = (id_role CHAR(36), int_role VARCHAR(50));
+id_tier = (id CHAR(36), nom VARCHAR(50), tel VARCHAR(50), mail VARCHAR(50), adr_postl VARCHAR(50), code_postl VARCHAR(50), fid CHAR(1));
+users = (id_user CHAR(36), login VARCHAR(50), mdp CHAR(64), #id);
+liste_types_articles = (id_type_article CHAR(36), int_type VARCHAR(50));
+liste_formes_tables = (id_forme_tbl CHAR(36), int_forme VARCHAR(50));
+id_employe = (id CHAR(36), matricule VARCHAR(50), role_id CHAR(36), mdp CHAR(64), #id_1, #id_role);
+article = (id_article CHAR(36), int_article VARCHAR(50), ingrd TEXT, prix DECIMAL(8,3), #id_type_article);
+tables = (id_table CHAR(36), num_tbl INT, nb_couvert INT, larg_tbl INT, long_tbl INT, position_tbl VARCHAR(50), #id_forme_tbl);
+dressages = (id_dres CHAR(36), int_dressage VARCHAR(50), path_photo_dres VARCHAR(50), #id_article);
+reservation = (id_res CHAR(36), num_res INT, date_res DATETIME, avis TEXT, #id_table*);
+commande = (#id_res, id_cmd CHAR(36), num_cmd INT);
+date_saisie_reservation = (#id, #id_res, date_reg DATETIME);
+demande_client = (#(#id_res, id_cmd), #id_article);
+
