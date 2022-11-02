@@ -1,3 +1,4 @@
+BEGIN;
 insert into users (id_user, login, mdp, id_tier) values ('df41fd7e-0a6f-494a-8420-fb8d15f6c6cb', 'mcanavan0', '1305f037ba4d114b116b991e5ae3334049793dccdb8279d6ab342ed291757b21', '00875d35-a5b5-4d7a-b809-11b07c3c9444');
 insert into users (id_user, login, mdp, id_tier) values ('8f6369bd-bec6-4c6d-bac3-9eb2ffc5c2cb', 'cbott1', 'fab52122e43eb4bb974b0b4efaa75a6b94a83368f45fc5da6c8db4cfd9bbcb0c', '03aa087e-d80f-435b-84af-4d839549af78');
 insert into users (id_user, login, mdp, id_tier) values ('1835d57e-a5eb-42a1-a4cc-1cc9e1e027c9', 'dtrowill2', '91bfd03a043ebc3c76ec593f5d811744d55ba1adf5a616aa2cfb510ebbd08d46', '066a2373-8228-4336-ba33-e6665b3f0f0d');
@@ -18,3 +19,4 @@ insert into users (id_user, login, mdp, id_tier) values ('1b5ed037-6578-4b12-b72
 insert into users (id_user, login, mdp, id_tier) values ('4e1a2ad7-a5fe-47c2-883e-12af0053e685', 'ggiovannih', '5e50e9e9a6e1ab49cc0070404f8c126f0be077e339f582e8002f52f52adced20', '34ce88fb-d536-4f72-ae55-5830503e3b5c');
 insert into users (id_user, login, mdp, id_tier) values ('412c59a2-5aae-425f-b796-4811b8fd52aa', 'ubenezi', '33cf6679709db084f6a025865c6cc9363e88ee727feae93fa5a0d70c53e0e320', '36870e98-1932-4ace-9603-cd81fa9755df');
 insert into users (id_user, login, mdp, id_tier) values ('afe8b081-4f47-4e78-848f-e25cfee000a2', 'dcurtonj', '60ce34608816b7b8f817abac3b9f33c3af976113b7f455c1bc05b1b21cd49563', '3f4392b2-397f-4a86-99e8-98fca7fa1942');
+COMMIT;

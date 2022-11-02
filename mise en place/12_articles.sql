@@ -1,3 +1,4 @@
+BEGIN;
 insert into articles (id_article, int_article, ingrd, prix, id_type_article) values ('7e1a63e1-562d-4a49-8444-3cfef9f8b292', 'Holdlamis', 'Spice - Chili Powder Mexican', 51.16, '28ec39d2-48b4-43d2-8304-aead89972851');
 insert into articles (id_article, int_article, ingrd, prix, id_type_article) values ('31cb6c03-2542-42e1-9fe8-f3a8e669bee9', 'Sonsing', 'Appetizer - Asian Shrimp Roll', 11.83, '47937f68-a5bd-4d09-b1ec-b18527b1c5f3');
 insert into articles (id_article, int_article, ingrd, prix, id_type_article) values ('cc8b21ff-8044-426e-ad1e-1ad297417b19', 'Sub-Ex', 'Rice - Basmati', 15.65, '86caea08-8135-4e98-8f0a-ce5934e12c76');
@@ -18,3 +19,4 @@ insert into articles (id_article, int_article, ingrd, prix, id_type_article) val
 insert into articles (id_article, int_article, ingrd, prix, id_type_article) values ('7878fa0a-1dd2-4aad-af31-92c0ac2fa2e5', 'Y-find', 'Thyme - Dried', 20.73, '47937f68-a5bd-4d09-b1ec-b18527b1c5f3');
 insert into articles (id_article, int_article, ingrd, prix, id_type_article) values ('6f10c394-d012-4ef9-934a-5b48e0c3cba3', 'Sonsong', 'Chicken - Tenderloin', 21.68, '86caea08-8135-4e98-8f0a-ce5934e12c76');
 insert into articles (id_article, int_article, ingrd, prix, id_type_article) values ('f5d18d30-8631-4011-a2b4-2b58b9e42e72', 'Otcom', 'Lemon Grass', 48.67, '956fdbbb-bc86-4b61-8df4-0a9a78bb6002');
+COMMIT;

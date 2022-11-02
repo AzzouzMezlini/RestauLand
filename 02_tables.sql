@@ -1,4 +1,7 @@
-DROP TABLE IF EXISTS liste_roles;
+\c RestauLand
+BEGIN;
+
+DROP TABLE IF EXISTS liste_roles CASCADE;
 CREATE TABLE liste_roles(
    id_role UUID,
    int_role VARCHAR(50) ,
@@ -6,7 +9,7 @@ CREATE TABLE liste_roles(
    UNIQUE(int_role)
 );
 
-DROP TABLE IF EXISTS tiers;
+DROP TABLE IF EXISTS tiers CASCADE;
 CREATE TABLE tiers(
    id_tier UUID,
    nom VARCHAR(50)  NOT NULL,
@@ -18,7 +21,7 @@ CREATE TABLE tiers(
    PRIMARY KEY(id_tier)
 );
 
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users(
    id_user UUID,
    login VARCHAR(50) ,
@@ -29,7 +32,7 @@ CREATE TABLE users(
    FOREIGN KEY(id_tier) REFERENCES tiers(id_tier)
 );
 
-DROP TABLE IF EXISTS liste_types_articles;
+DROP TABLE IF EXISTS liste_types_articles CASCADE;
 CREATE TABLE liste_types_articles(
    id_type_article UUID,
    int_type VARCHAR(50) ,
@@ -37,7 +40,7 @@ CREATE TABLE liste_types_articles(
    UNIQUE(int_type)
 );
 
-DROP TABLE IF EXISTS liste_formes_tables;
+DROP TABLE IF EXISTS liste_formes_tables CASCADE;
 CREATE TABLE liste_formes_tables(
    id_forme_tbl UUID,
    int_forme VARCHAR(50)  NOT NULL,
@@ -45,7 +48,7 @@ CREATE TABLE liste_formes_tables(
    UNIQUE(int_forme)
 );
 
-DROP TABLE IF EXISTS liste_etat_reservation;
+DROP TABLE IF EXISTS liste_etat_reservation CASCADE;
 CREATE TABLE liste_etat_reservation(
    id_etat_res UUID,
    int_etat VARCHAR(50) ,
@@ -53,7 +56,7 @@ CREATE TABLE liste_etat_reservation(
    UNIQUE(int_etat)
 );
 
-DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS employees CASCADE;
 CREATE TABLE employees(
    id_employe UUID,
    matricule VARCHAR(50) ,
@@ -67,7 +70,7 @@ CREATE TABLE employees(
    FOREIGN KEY(id_role) REFERENCES liste_roles(id_role)
 );
 
-DROP TABLE IF EXISTS articles;
+DROP TABLE IF EXISTS articles CASCADE;
 CREATE TABLE articles(
    id_article UUID,
    int_article VARCHAR(50)  NOT NULL,
@@ -79,7 +82,7 @@ CREATE TABLE articles(
    FOREIGN KEY(id_type_article) REFERENCES liste_types_articles(id_type_article)
 );
 
-DROP TABLE IF EXISTS tables;
+DROP TABLE IF EXISTS tables CASCADE;
 CREATE TABLE tables(
    id_table UUID,
    num_tbl INTEGER,
@@ -92,7 +95,7 @@ CREATE TABLE tables(
    FOREIGN KEY(id_forme_tbl) REFERENCES liste_formes_tables(id_forme_tbl)
 );
 
-DROP TABLE IF EXISTS dressages;
+DROP TABLE IF EXISTS dressages CASCADE;
 CREATE TABLE dressages(
    id_dres UUID,
    int_dressage VARCHAR(50)  NOT NULL,
@@ -100,58 +103,53 @@ CREATE TABLE dressages(
    id_article UUID NOT NULL,
    PRIMARY KEY(id_dres),
    UNIQUE(int_dressage),
-   FOREIGN KEY(id_article) REFERENCES article(id_article)
+   FOREIGN KEY(id_article) REFERENCES articles(id_article)
 );
 
-DROP TABLE IF EXISTS reservations;
+DROP TABLE IF EXISTS reservations CASCADE;
 CREATE TABLE reservations(
-   id_table UUID,
    id_res UUID,
    num_res INTEGER NOT NULL,
    avis TEXT,
    date_reg TIMESTAMP NOT NULL,
    date_res TIMESTAMP NOT NULL,
-   PRIMARY KEY(id_table, id_res),
+   id_table UUID NOT NULL,
+   id_tier UUID NOT NULL,
+   PRIMARY KEY(id_res),
    UNIQUE(num_res),
-   FOREIGN KEY(id_table) REFERENCES tables(id_table)
+   FOREIGN KEY(id_table) REFERENCES tables(id_table),
+   FOREIGN KEY(id_tier) REFERENCES tiers(id_tier)
 );
 
-
-
-DROP TABLE IF EXISTS commande;
+DROP TABLE IF EXISTS commande CASCADE;
 CREATE TABLE commande(
    id_res UUID,
    id_cmd UUID,
    num_cmd INTEGER,
    PRIMARY KEY(id_res, id_cmd),
-   FOREIGN KEY(id_res) REFERENCES reservation(id_res)
+   UNIQUE(id_res),
+   FOREIGN KEY(id_res) REFERENCES reservations(id_res)
 );
 
-DROP TABLE IF EXISTS date_saisie_reservation;
-CREATE TABLE date_saisie_reservation(
-   id_tier UUID,
-   id_res UUID,
-   PRIMARY KEY(id_tier, id_res),
-   FOREIGN KEY(id_tier) REFERENCES tiers(id_tier),
-   FOREIGN KEY(id_res) REFERENCES reservation(id_res)
-);
-
-DROP TABLE IF EXISTS demande_client;
+DROP  TABLE IF EXISTS demande_client CASCADE;
 CREATE TABLE demande_client(
    id_res UUID,
    id_cmd UUID,
    id_article UUID,
    PRIMARY KEY(id_res, id_cmd, id_article),
    FOREIGN KEY(id_res, id_cmd) REFERENCES commande(id_res, id_cmd),
-   FOREIGN KEY(id_article) REFERENCES article(id_article)
+   FOREIGN KEY(id_article) REFERENCES articles(id_article)
 );
 
-DROP TABLE IF EXISTS etat_res;
+DROP TABLE IF EXISTS etat_res CASCADE;
 CREATE TABLE etat_res(
    id_res UUID,
-   id_etat_res UUID,
-   date_action TIMESTAMP NOT NULL,
-   PRIMARY KEY(id_res, id_etat_res),
-   FOREIGN KEY(id_res) REFERENCES reservation(id_res),
+   date_debut TIMESTAMP NOT NULL,
+   id_employe UUID NOT NULL,
+   id_etat_res UUID NOT NULL,
+   PRIMARY KEY(id_res),
+   FOREIGN KEY(id_res) REFERENCES reservations(id_res),
+   FOREIGN KEY(id_employe) REFERENCES employees(id_employe),
    FOREIGN KEY(id_etat_res) REFERENCES liste_etat_reservation(id_etat_res)
 );
+COMMIT;

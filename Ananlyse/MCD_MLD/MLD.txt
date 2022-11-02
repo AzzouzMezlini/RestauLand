@@ -12,3 +12,4 @@ reservations = (id_res UUID, num_res INTEGER, avis TEXT, date_reg TIMESTAMP, dat
 commande = (#id_res, id_cmd UUID, num_cmd INTEGER);
 demande_client = (#(#id_res, id_cmd), #id_article);
 etat_res = (#id_res, date_debut TIMESTAMP, #id_employe, #id_etat_res);
+

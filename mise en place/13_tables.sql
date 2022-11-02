@@ -1,3 +1,4 @@
+BEGIN;
 insert into tables (id_table, num_tbl, nb_couvert, larg_tbl, long_tbl, position_tbl, id_forme_tbl) values ('0d69fc5a-f20e-446f-b50c-64ec4cba3e7a', 1, 6, 149, 142, '48;33', '2d3595d9-2db4-44cb-aa93-8a3dc83a2aed');
 insert into tables (id_table, num_tbl, nb_couvert, larg_tbl, long_tbl, position_tbl, id_forme_tbl) values ('ce9be4a8-baf0-48e9-a04c-78743dbbf6dc', 2, 4, 123, 197, '31;29', '2d3595d9-2db4-44cb-aa93-8a3dc83a2aed');
 insert into tables (id_table, num_tbl, nb_couvert, larg_tbl, long_tbl, position_tbl, id_forme_tbl) values ('1fe399c0-4b59-4491-84c8-108a537e59bf', 3, 2, 152, 210, '28;91', '2d3595d9-2db4-44cb-aa93-8a3dc83a2aed');
@@ -10,3 +11,4 @@ insert into tables (id_table, num_tbl, nb_couvert, larg_tbl, long_tbl, position_
 insert into tables (id_table, num_tbl, nb_couvert, larg_tbl, long_tbl, position_tbl, id_forme_tbl) values ('f202d1cf-d827-4de3-8862-5414ce02f951', 10, 2, 159, 188, '81;25', '8efc0d02-64b7-4d8d-a089-2298bd159248');
 insert into tables (id_table, num_tbl, nb_couvert, larg_tbl, long_tbl, position_tbl, id_forme_tbl) values ('2ee5908c-3539-4119-bfd6-c6a9b7fe5ead', 11, 4, 128, 147, '91;17', '8efc0d02-64b7-4d8d-a089-2298bd159248');
 insert into tables (id_table, num_tbl, nb_couvert, larg_tbl, long_tbl, position_tbl, id_forme_tbl) values ('ab1b492b-c01a-4f41-8538-a5d9921a0cfa', 12, 2, 141, 209, '00;36', '2d3595d9-2db4-44cb-aa93-8a3dc83a2aed');
+COMMIT;

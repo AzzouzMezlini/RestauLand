@@ -1,3 +1,4 @@
+BEGIN;
 -- DROP MATERIALIZED VIEW IF EXISTS public.listes_boissons;
 
 CREATE MATERIALIZED VIEW IF NOT EXISTS public.listes_boissons
@@ -20,8 +21,10 @@ CREATE UNIQUE INDEX id_boisson
     (id COLLATE pg_catalog."default")
     TABLESPACE pg_default;
 	
+COMMIT;
 ---
 
+BEGIN;
 -- DROP MATERIALIZED VIEW IF EXISTS public.listes_plats;
 
 CREATE MATERIALIZED VIEW IF NOT EXISTS public.listes_plats
@@ -43,3 +46,4 @@ CREATE UNIQUE INDEX id_plat
     ON public.listes_plats USING btree
     (id COLLATE pg_catalog."default")
     TABLESPACE pg_default;
+COMMIT;

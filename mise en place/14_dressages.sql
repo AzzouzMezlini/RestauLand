@@ -1,3 +1,4 @@
+BEGIN;
 insert into dressages (id_dres, int_dressage, path_photo_dres, id_article) values ('2b6c7257-c1fb-45ce-95cf-12e3b18652ee', 'Plymouth', 'http://dummyimage.com/100x100.png/cc0000/ffffff', '31cb6c03-2542-42e1-9fe8-f3a8e669bee9');
 insert into dressages (id_dres, int_dressage, path_photo_dres, id_article) values ('fab312f3-fd6e-4c81-b449-2d811a27d103', 'Ford', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff', '3cb79b94-0122-434c-b596-3983f061ec6b');
 insert into dressages (id_dres, int_dressage, path_photo_dres, id_article) values ('04f30420-63bb-427f-8a2e-f21a42826b73', 'Ford', 'http://dummyimage.com/100x100.png/cc0000/ffffff', '595134d9-adc2-4af3-9aa3-b6cd435ff22d');
@@ -13,3 +14,4 @@ insert into dressages (id_dres, int_dressage, path_photo_dres, id_article) value
 insert into dressages (id_dres, int_dressage, path_photo_dres, id_article) values ('b9ffcecd-12bb-4ac3-b7e0-fa5ca4de6e5d', 'GMC', 'http://dummyimage.com/100x100.png/5fa2dd/ffffff', '595134d9-adc2-4af3-9aa3-b6cd435ff22d');
 insert into dressages (id_dres, int_dressage, path_photo_dres, id_article) values ('31a5dcf6-68c6-4ab7-adc4-66b5085a1132', 'Mercedes-Benz', 'http://dummyimage.com/100x100.png/ff4444/ffffff', '7878fa0a-1dd2-4aad-af31-92c0ac2fa2e5');
 insert into dressages (id_dres, int_dressage, path_photo_dres, id_article) values ('b9b9b19b-a4bf-44e3-96cd-865b7e3ae817', 'Ford', 'http://dummyimage.com/100x100.png/cc0000/ffffff', '8d8b6fc9-0d3a-4585-8030-bc66a96c51a0');
+COMMIT;

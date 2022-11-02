@@ -1,3 +1,4 @@
+BEGIN;
 insert into tiers (id_tier, nom, tel, mail, adr_postl, code_postl, fid) values ('5dc3824e-dd83-4d4a-8d5e-9a5b25e579d3', 'Gregorio Moxom', '291-256-3027', 'gmoxom0@businessweek.com', null, null, null);
 insert into tiers (id_tier, nom, tel, mail, adr_postl, code_postl, fid) values ('a4ca7693-778d-401e-8d4c-a5355f926ed3', 'Egor De Simone', '390-235-4880', 'ede1@tiny.cc', null, null, null);
 insert into tiers (id_tier, nom, tel, mail, adr_postl, code_postl, fid) values ('68e84306-209e-4d56-a1e5-c47a618fb74d', 'Ileane Henderson', '391-717-2550', 'ihenderson2@nasa.gov', '82 Nancy Point', '3899', 'D');
@@ -58,3 +59,4 @@ insert into tiers (id_tier, nom, tel, mail, adr_postl, code_postl, fid) values (
 insert into tiers (id_tier, nom, tel, mail, adr_postl, code_postl, fid) values ('c6c0060f-25fc-42ea-961b-8d2fa921f2f2', 'Duffy Bentham', '969-195-4565', 'dbentham1l@nydailynews.com', null, null, null);
 insert into tiers (id_tier, nom, tel, mail, adr_postl, code_postl, fid) values ('a174e2c0-597b-4154-9825-6e56f94e832e', 'Elaina Thouless', '701-868-9150', 'ethouless1m@wufoo.com', null, null, null);
 insert into tiers (id_tier, nom, tel, mail, adr_postl, code_postl, fid) values ('163ca6aa-420c-4e1a-8f5d-b322962f522f', 'Janey Stoving', '465-569-8897', 'jstoving1n@uiuc.edu', null, null, null);
+COMMIT;

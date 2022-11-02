@@ -1,3 +1,4 @@
+BEGIN;
 insert into employees (id_employe, matricule, mdp, id_tier, id_role) values ('fa9ebd6b-1fbc-4bd3-9618-333f494f8f5d', '30-4481325', '7b5bc1bb1693c4cef70fc5e3187f18a6db8205bf0e2b639477e71b72b1ee7d31', '00875d35-a5b5-4d7a-b809-11b07c3c9444', '47ceaba9-1688-415e-ac5a-7673018bd0e7');
 insert into employees (id_employe, matricule, mdp, id_tier, id_role) values ('54b0f6dc-c87f-4ff1-b022-10d1835fc84a', '40-0470133', 'd3ddbe4693a09529d8d322d8a7800d1be21b120b290b9a58db9204b57f4f4bab', '03aa087e-d80f-435b-84af-4d839549af78', '47ceaba9-1688-415e-ac5a-7673018bd0e7');
 insert into employees (id_employe, matricule, mdp, id_tier, id_role) values ('f204a0e4-a55d-4c17-89e9-5fe64f3a0266', '14-7507170', '089b7a57e592abe15c4dd4f3cf3395dfe51730a1447517857dfadc2187fddbd5', '066a2373-8228-4336-ba33-e6665b3f0f0d', '433b61da-c12d-42ab-8c8b-ab4ce4fa1f44');
@@ -13,3 +14,4 @@ insert into employees (id_employe, matricule, mdp, id_tier, id_role) values ('2b
 insert into employees (id_employe, matricule, mdp, id_tier, id_role) values ('7f071170-fd5a-4b93-94e7-a82c85ae345d', '26-4950574', '1f5d98c09ac4db96d23d3a3651033ebd80288f41f86771544287f9c5cc401f8d', '24c95748-3f73-4daf-a003-9f35119d17b6', '433b61da-c12d-42ab-8c8b-ab4ce4fa1f44');
 insert into employees (id_employe, matricule, mdp, id_tier, id_role) values ('ea204f8a-b6fe-4fff-9bb0-f5fe2bd42155', '99-9696663', 'ecfd1650a8da48a3e4fa317a9c527f0a5e7c836459286db994b3d305648d2d2e', '2717db3d-437a-4286-bd64-de8fa5e7a201', '433b61da-c12d-42ab-8c8b-ab4ce4fa1f44');
 insert into employees (id_employe, matricule, mdp, id_tier, id_role) values ('f065b175-00b5-453a-a23e-fa9618f198fd', '20-2473690', 'c14f8990f65c6f2c645f1b2b325ab51023a3124a689b6706e78ed16c8f0b853f', '2a0cd9c8-50b1-4189-8b6f-eef0ea98c15d', '47ceaba9-1688-415e-ac5a-7673018bd0e7');
+COMMIT;
