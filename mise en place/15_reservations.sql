@@ -1,3 +1,4 @@
+begin;
 insert into reservations (id_res, num_res, date_reg, date_res, avis, id_table, id_tier) values ('3e32accb-ba10-44bc-a077-eea8080e4658', 1, '2022-10-06 01:51:44', '2022-10-17 01:51:44', null, '01d6eef2-d294-47b7-a6fe-0f68b425eb16', '1b712d9f-28ca-4a85-8ab8-fbef60ca3855');
 insert into reservations (id_res, num_res, date_reg, date_res, avis, id_table, id_tier) values ('edda2128-69d0-405f-a665-03172bb979b4', 2, '2022-03-11 18:24:38', '2022-05-03 18:24:38', 'Upgradable', '0a655cd2-6dc8-4b0d-9cfa-151b67bfd45b', '36870e98-1932-4ace-9603-cd81fa9755df');
 insert into reservations (id_res, num_res, date_reg, date_res, avis, id_table, id_tier) values ('88572772-ec46-48e9-92a5-a23889dc88f2', 3, '2022-03-04 01:21:13', '2022-03-20 01:21:13', null, '0d69fc5a-f20e-446f-b50c-64ec4cba3e7a', '0a7795d6-7738-4d01-86d3-6f9e1c3ba7b0');
@@ -198,3 +199,4 @@ insert into reservations (id_res, num_res, date_reg, date_res, avis, id_table, i
 insert into reservations (id_res, num_res, date_reg, date_res, avis, id_table, id_tier) values ('3c12750d-163b-460f-86e9-52043af82c03', 198, '2022-06-20 21:28:50', '2022-07-10 21:28:50', null, '50e2c63f-5167-4adc-8076-865921f87a84', '204d1abc-c73e-47f8-afc8-228421639276');
 insert into reservations (id_res, num_res, date_reg, date_res, avis, id_table, id_tier) values ('5ae55d60-4bd6-4ba5-9c5c-4a214b012956', 199, '2022-09-03 11:52:43', '2022-11-20 11:52:43', null, 'ab1b492b-c01a-4f41-8538-a5d9921a0cfa', '163ca6aa-420c-4e1a-8f5d-b322962f522f');
 insert into reservations (id_res, num_res, date_reg, date_res, avis, id_table, id_tier) values ('f29d6e14-acc5-483a-b4d7-a142e7dc691c', 200, '2022-02-28 05:30:19', '2022-05-19 05:30:19', null, 'ac73de44-d18f-4a38-be4d-6c17e1a9fbf7', '07bb29cb-75dd-41ab-aa2b-474f7767e1e3');
+commit;

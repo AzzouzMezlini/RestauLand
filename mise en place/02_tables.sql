@@ -145,11 +145,12 @@ DROP TABLE IF EXISTS etat_res CASCADE;
 CREATE TABLE etat_res(
    id_res UUID,
    date_debut TIMESTAMP NOT NULL,
-   id_employe UUID NOT NULL,
+   date_fin TIMESTAMP,
+   immat_employe VARCHAR(50),
    id_etat_res UUID NOT NULL,
    PRIMARY KEY(id_res),
    FOREIGN KEY(id_res) REFERENCES reservations(id_res),
-   FOREIGN KEY(id_employe) REFERENCES employees(id_employe),
+   FOREIGN KEY(immat_employe) REFERENCES employees(matricule),
    FOREIGN KEY(id_etat_res) REFERENCES liste_etat_reservation(id_etat_res)
 );
 COMMIT;
